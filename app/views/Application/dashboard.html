@@ -1,0 +1,93 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+     
+    <link href="@{'/public/stylesheets/bootstrap.min.css'}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+     <link href="@{'/public/stylesheets/starter-template.css'}" rel="stylesheet">
+     <link href="@{'/public/stylesheets/dashboard.css'}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
+    <![endif]-->
+    
+    <style type="text/css">
+
+svg {
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+</style>
+  </head>
+
+  <body style="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">UMC</a>
+        </div>
+   <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            <li><a href="/project">Research</a></li>
+            <li class="active"><a href="#contact">Dashboard</a></li>
+            <li><a href="#contact">Simulation</a></li>
+            <li><a href="/people">People</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+      
+      
+<div class="col-sm-3 col-md-2 sidebar">
+           
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-tasks"></span> Main</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-stats"></span> Analytics</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-time"></span> Real-Time</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-time"></span> Visualization</a></li>
+            <li><a href="#"> <span class="glyphicon glyphicon-wrench"></span> Tools</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Email</a></li>
+          </ul>
+         
+        </div>
+    
+      <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script src="@{'/public/javascripts/bootstrap.min.js'}"></script>
+  
+
+</body></html>

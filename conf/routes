@@ -5,6 +5,13 @@
 # Home page
 GET     /                                       Application.index
 
+GET /project                                    controllers.Application.project()
+
+GET /dashboard                                  controllers.Application.dashboard()
+
+GET /people                                  controllers.Application.people()
+
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
