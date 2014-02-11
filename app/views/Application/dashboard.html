@@ -12,8 +12,10 @@
      
     <link href="@{'/public/stylesheets/bootstrap.min.css'}" rel="stylesheet">
     <!-- Custom styles for this template -->
-     <link href="@{'/public/stylesheets/starter-template.css'}" rel="stylesheet">
+     <link href="@{'/public/stylesheets/dashboardtwo.css'}" rel="stylesheet">
      <link href="@{'/public/stylesheets/dashboard.css'}" rel="stylesheet">
+   
+   
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,7 +59,7 @@ svg {
           <ul class="nav navbar-nav">
             
             <li><a href="/project">Research</a></li>
-            <li class="active"><a href="#contact">Dashboard</a></li>
+            <li class="active"><a href="#/dashboard">Dashboard</a></li>
             <li><a href="#contact">Simulation</a></li>
             <li><a href="/people">People</a></li>
           </ul>
@@ -72,15 +74,120 @@ svg {
             <li class="active"><a href="#"><span class="glyphicon glyphicon-tasks"></span> Main</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-stats"></span> Analytics</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-time"></span> Real-Time</a></li>
+            <li><a href="/real"><span class="glyphicon glyphicon-time"></span> Real-Time</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span> Visualization</a></li>
             <li><a href="#"> <span class="glyphicon glyphicon-wrench"></span> Tools</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Email</a></li>
           </ul>
          
         </div>
+           
+       
+       <div class="starter-template" >
+           
+            <div class="panel panel-primary">
+             <div class="panel-heading">
+                 
+               <h3 class="panel-title">Progress <span class="glyphicon glyphicon-arrow-right"></span></h3>
+            </div>
+            <div class="panel-body">
+                  <div class="progress progress-striped active">
+                      <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+                           <span class="badge pull-right">15%</span>
+                          
+                      </div>
+                    </div>
+            </div>
+          </div>
+           
+          <div class="row">
+        <div class="col-md-4">    
+            <div class="list-group" >
+              <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">Findings <span class="glyphicon glyphicon-info-sign"></span></h4>
+                <p class="list-group-item-text">Latest data mining findings</p>
+              </a>
+                <a href="#" class="list-group-item ">
+                <h4 class="list-group-item-heading">Prediction</h4>
+                <p class="list-group-item-text" >. Learn more...</p>
+              </a>
+
+                 
+            </div>
+        </div>
+              <div class="col-md-8">    
+                    <div class="list-group" >
+                      <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">Chart <span class="glyphicon glyphicon-stats"></span></h4>
+                        <p class="list-group-item-text"> Chart here</p>
+                      </a>
+                      <a href="#" class="list-group-item ">
+                       
+                        </a>
+                    </div>
+            </div>
+              
+          </div>
+           <div class="alert alert-success">
+               
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500,
+    radius = Math.min(width, height) / 2 - 10;
+
+var data = d3.range(10).map(Math.random).sort(d3.descending);
+
+var color = d3.scale.category20();
+
+var arc = d3.svg.arc()
+    .outerRadius(radius);
+
+var pie = d3.layout.pie();
+
+var svg = d3.select("body").append("svg")
+    .datum(data)
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var arcs = svg.selectAll("g.arc")
+    .data(pie)
+  .enter().append("g")
+    .attr("class", "arc");
+
+arcs.append("path")
+    .attr("fill", function(d, i) { return color(i); })
+  .transition()
+    .ease("bounce")
+    .duration(2000)
+    .attrTween("d", tweenPie)
+  .transition()
+    .ease("elastic")
+    .delay(function(d, i) { return 2000 + i * 50; })
+    .duration(750)
+    .attrTween("d", tweenDonut);
+
+function tweenPie(b) {
+  b.innerRadius = 0;
+  var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+  return function(t) { return arc(i(t)); };
+}
+
+function tweenDonut(b) {
+  b.innerRadius = radius * .6;
+  var i = d3.interpolate({innerRadius: 0}, b);
+  return function(t) { return arc(i(t)); };
+}
+
+</script>
+           </div>
+       
+       </div>
     
-      <!-- /.container -->
+      <!-- /.container-->
 
 
     <!-- Bootstrap core JavaScript
@@ -88,6 +195,6 @@ svg {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
      <script src="@{'/public/javascripts/bootstrap.min.js'}"></script>
-  
+    
 
 </body></html>

@@ -9,6 +9,8 @@ GET /project                                    controllers.Application.project(
 
 GET /dashboard                                  controllers.Application.dashboard()
 
+GET /real                                  controllers.Application.real()
+
 GET /people                                  controllers.Application.people()
 
 

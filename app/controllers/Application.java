@@ -22,4 +22,8 @@ public class Application extends Controller {
      public static void people(){
          render("@Application.people");
     }
+     
+     public static void real(){
+         render("@Application.dashboard_realtime");
+    }
 }
